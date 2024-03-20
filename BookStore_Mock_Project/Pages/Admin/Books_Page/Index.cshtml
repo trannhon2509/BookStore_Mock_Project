@@ -1,0 +1,118 @@
+﻿@page
+@model BookStore_Mock_Project.Pages.Admin.Books_Page.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">User List</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Deleted</button>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <p>
+            <a asp-page="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Book[0].Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Book[0].Author)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Book[0].Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Book[0].Category)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Book)
+                {
+                    if (item.Status)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Author)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category.CategoryId)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.BookId">Edit</a> |
+                                <a asp-page="./Details" asp-route-id="@item.BookId">Details</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.BookId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <p>
+            <a asp-page="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Book[0].Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Book[0].Author)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Book[0].Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Book[0].Category)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Book)
+                {
+                    if (!item.Status)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Author)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category.CategoryId)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.BookId">Edit</a> |
+                                <a asp-page="./Details" asp-route-id="@item.BookId">Details</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.BookId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
