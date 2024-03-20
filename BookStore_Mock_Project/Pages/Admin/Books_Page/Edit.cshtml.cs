@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BookStore_Mock_Project.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using BookStore_Mock_Project.Data;
-using BookStore_Mock_Project.Model;
 
 namespace BookStore_Mock_Project.Pages.Admin.Books_Page
 {
@@ -30,13 +25,13 @@ namespace BookStore_Mock_Project.Pages.Admin.Books_Page
                 return NotFound();
             }
 
-            var book =  await _context.Books.FirstOrDefaultAsync(m => m.BookId == id);
+            var book = await _context.Books.FirstOrDefaultAsync(m => m.BookId == id);
             if (book == null)
             {
                 return NotFound();
             }
             Book = book;
-           ViewData["CategoryId"] = new SelectList(_context.BookCategories, "CategoryId", "CategoryId");
+            ViewData["CategoryId"] = new SelectList(_context.BookCategories, "CategoryId", "CategoryId");
             return Page();
         }
 
@@ -66,13 +61,13 @@ namespace BookStore_Mock_Project.Pages.Admin.Books_Page
                     throw;
                 }
             }
-
+            TempData["EditSuccess"] = Book.Title + " edited successfully";
             return RedirectToPage("./Index");
         }
 
         private bool BookExists(Guid id)
         {
-          return (_context.Books?.Any(e => e.BookId == id)).GetValueOrDefault();
+            return (_context.Books?.Any(e => e.BookId == id)).GetValueOrDefault();
         }
     }
 }

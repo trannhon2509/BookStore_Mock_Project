@@ -52,7 +52,7 @@ namespace BookStore_Mock_Project.Pages.Admin.Books_Page
                 //_context.Books.Remove(Book);
                 await _context.SaveChangesAsync();
             }
-
+            TempData["DeleteSuccess"] = book.Title + " deleted successfully.";
             return RedirectToPage("./Index");
         }
     }

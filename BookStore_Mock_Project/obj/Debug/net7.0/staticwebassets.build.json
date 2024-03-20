@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qXtlZATVSTztgA9RFa4dVpTcYgYSK/GrjponmXGce4w=",
+  "Hash": "XTt6fFe7c9wOWS5cYMTqdLP8MBRzacReIUSgWlo+W/k=",
   "Source": "BookStore_Mock_Project",
   "BasePath": "_content/BookStore_Mock_Project",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\nguye\\source\\repos\\BookStore_Mock_Project\\BookStore_Mock_Project\\wwwroot\\img\\open-book.png",
+      "SourceId": "BookStore_Mock_Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nguye\\source\\repos\\BookStore_Mock_Project\\BookStore_Mock_Project\\wwwroot\\",
+      "BasePath": "_content/BookStore_Mock_Project",
+      "RelativePath": "img/open-book.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\open-book.png"
     },
     {
       "Identity": "C:\\Users\\nguye\\source\\repos\\BookStore_Mock_Project\\BookStore_Mock_Project\\wwwroot\\js\\site.js",

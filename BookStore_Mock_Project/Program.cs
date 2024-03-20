@@ -36,7 +36,14 @@ namespace BookStore_Mock_Project
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.Use(async (context, next) =>
+            {
+                if (!context.User.Identity.IsAuthenticated && !context.Request.Path.StartsWithSegments("/Login"))
+                {
+                    context.Response.Redirect("/Login");
+                }
+                await next();
+            });
             app.MapRazorPages();
 
 

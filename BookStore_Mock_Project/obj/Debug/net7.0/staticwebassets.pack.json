@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\nguye\\source\\repos\\BookStore_Mock_Project\\BookStore_Mock_Project\\wwwroot\\img\\open-book.png",
+      "PackagePath": "staticwebassets\\img\\open-book.png"
+    },
+    {
       "Id": "C:\\Users\\nguye\\source\\repos\\BookStore_Mock_Project\\BookStore_Mock_Project\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

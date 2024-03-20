@@ -11,23 +11,75 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">BookStore_Mock_Project</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+            <div class="container-fluid d-flex justify-content-between">
+                
+                @if (TempData["admin"] == null)
+                {
+                    <div>
+                        <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="~/img/open-book.png" width="50" alt="Alternate Text" /></a>
+                        BOOKSTORE
+                    </div>
+
+                    <ul class="navbar-nav d-flex justify-content-around">
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Book</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
+
                     </ul>
-                </div>
+                    
+                    <ul class="navbar-nav d-flex justify-content-between">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Books_Page/Index"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Login</a>
+                        </li>
+
+                    </ul>
+                } else
+                {
+                    <div>
+                        <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="~/img/open-book.png" width="50" alt="Alternate Text" /></a>
+                        BOOKSTORE
+                    </div>
+
+                    <ul class="navbar-nav d-flex justify-content-around">
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Book</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About</a>
+                        </li>
+
+                    </ul>
+
+                    <ul class="navbar-nav d-flex justify-content-between">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Books_Page/Index">Hello nhontran</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Logout</a>
+                        </li>
+
+                    </ul>
+                }
+
             </div>
+
         </nav>
     </header>
     <div class="container">
