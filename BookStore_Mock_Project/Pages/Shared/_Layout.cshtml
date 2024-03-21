@@ -13,7 +13,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid d-flex justify-content-between">
                 
-                @if (TempData["admin"] == null)
+                @if (TempData["admin"] != null)
                 {
                     <div>
                         <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="~/img/open-book.png" width="50" alt="Alternate Text" /></a>
@@ -23,16 +23,16 @@
                     <ul class="navbar-nav d-flex justify-content-around">
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Books_Page/Index">Book</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Book</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Categories_Page/Index">Category</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Orders_Page/Index">Order</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Users_Page/Index">User</a>
                         </li>
 
                     </ul>
@@ -42,7 +42,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Books_Page/Index"></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Login</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Logout</a>
                         </li>
 
                     </ul>
@@ -59,7 +59,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Book</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privary</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">About</a>

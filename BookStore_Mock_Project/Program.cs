@@ -9,6 +9,13 @@ namespace BookStore_Mock_Project
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // Thêm dịch vụ session vào ứng dụng
+            builder.Services.AddSession(options =>
+            {
+                // Thiết lập thời gian sống mặc định cho session (ở đây là 20 phút)
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
+            });
+
             // Add services to the container.
             builder.Services.AddRazorPages();
             // Add services to the container.
@@ -36,14 +43,7 @@ namespace BookStore_Mock_Project
             app.UseRouting();
 
             app.UseAuthorization();
-            app.Use(async (context, next) =>
-            {
-                if (!context.User.Identity.IsAuthenticated && !context.Request.Path.StartsWithSegments("/Login"))
-                {
-                    context.Response.Redirect("/Login");
-                }
-                await next();
-            });
+
             app.MapRazorPages();
 
 

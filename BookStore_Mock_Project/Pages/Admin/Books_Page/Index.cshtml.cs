@@ -20,6 +20,7 @@ namespace BookStore_Mock_Project.Pages.Admin.Books_Page
         {
             if (_context.Books != null)
             {
+                TempData["admin"] = "admin";
                 Book = await _context.Books
                 .Include(b => b.Category).ToListAsync();
             }

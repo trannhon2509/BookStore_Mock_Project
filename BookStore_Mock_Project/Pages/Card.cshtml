@@ -1,0 +1,35 @@
+﻿@page
+@model BookStore_Mock_Project.Pages.CardModel
+@{
+}
+
+<a asp-page="./Index" class="btn btn-primary">Back to Index</a>
+<h1>Card</h1>
+@if (Model.Cart != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.Cart)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Price</td>
+                    <td>@book.Category.Name</td>
+                    <td>@book.Author</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No items in the cart.</p>
+}

@@ -23,10 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Admin\Categories_Page\" />
-    <Folder Include="Pages\Admin\Roles_Page\" />
-    <Folder Include="Pages\Admin\Users_Page\" />
-    <Folder Include="Pages\Admin\Orders_Page\" />
     <Folder Include="Pages\User\" />
     <Folder Include="wwwroot\img\" />
   </ItemGroup>

@@ -19,7 +19,7 @@ namespace BookStore_Mock_Project.Pages
         {
 
         }
-        public IActionResult OnPost()
+        public IActionResult OnPostLogin()
         {
             string username = Request.Form["username"];
             string password = Request.Form["password"];
@@ -32,7 +32,7 @@ namespace BookStore_Mock_Project.Pages
                 if (find.Role.Name.Equals("Admin"))
                 {
                     TempData["admin"] = find.Username;
-                    return Redirect("/Index");
+                    return Redirect("/Admin/Books_Page/Index");
                 }
                 else
                 {
@@ -40,7 +40,18 @@ namespace BookStore_Mock_Project.Pages
                     return Redirect("/Index");
                 }
             }
-            return Page();
+            return Redirect("/Index");
+        }
+        public IActionResult OnPostRegister()
+        {
+            // Thực hiện đăng ký người dùng ở đây
+            // Sau khi đăng ký thành công, bạn có thể đăng nhập người dùng tự động hoặc chuyển hướng đến trang đăng nhập
+
+            // Ví dụ:
+            // RegisterUser(Username, Password);
+
+            // Sau khi đăng ký thành công, chuyển hướng đến trang đăng nhập
+            return RedirectToPage("/Login");
         }
     }
 }
