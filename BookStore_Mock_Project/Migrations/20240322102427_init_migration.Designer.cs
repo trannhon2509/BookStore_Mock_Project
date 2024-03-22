@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookStore_Mock_Project.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240321204647_init-migration")]
-    partial class initmigration
+    [Migration("20240322102427_init_migration")]
+    partial class init_migration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
