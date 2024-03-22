@@ -3,6 +3,8 @@
 
 @{
     ViewData["Title"] = "Login";
+    Layout = "BoostrapLayout";
+    
 }
 <div class="container">
 
@@ -12,12 +14,12 @@
     <form method="post">
         <div class="container">
             <div class="form-group">
-                <label for="exampleInputEmail1">Username</label>
-                <input type="text" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp" placeholder="Enter username" name="username">
+                <label >Username</label>
+                <input type="text" class="form-control" asp-for="username" placeholder="Enter username" />
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                <label>Password</label>
+                <input type="password" class="form-control" asp-for="password" placeholder="Enter password" />
             </div>
             <div class="d-flex gap-2 mt-2 mb-2">
                 <div class="form-group">

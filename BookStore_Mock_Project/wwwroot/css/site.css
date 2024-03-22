@@ -20,3 +20,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+.text-truncate-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* S? dòng mu?n hi?n th? */
+    max-width: 100%; /* ho?c thay ??i thành max-width: 50px; n?u b?n mu?n dùng pixel */
+}

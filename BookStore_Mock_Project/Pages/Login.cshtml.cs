@@ -9,6 +9,10 @@ namespace BookStore_Mock_Project.Pages
 
         private readonly BookStore_Mock_Project.Data.ApplicationDbContext _context;
 
+        [BindProperty]
+        public string username { get; set; }
+        [BindProperty]
+        public string password { get; set; }
         public LoginModel(BookStore_Mock_Project.Data.ApplicationDbContext context)
         {
             _context = context;
@@ -21,12 +25,8 @@ namespace BookStore_Mock_Project.Pages
         }
         public IActionResult OnPostLogin()
         {
-            string username = Request.Form["username"];
-            string password = Request.Form["password"];
-
             var find = _context.Users.Include(u => u.Role)
                               .FirstOrDefault(x => x.Username == username && x.Password == password);
-
             if (find != null)
             {
                 if (find.Role.Name.Equals("Admin"))

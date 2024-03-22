@@ -32,6 +32,11 @@ namespace BookStore_Mock_Project.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Book>()
+                .HasOne(b => b.Category)
+                .WithMany(c => c.Books)
+                .HasForeignKey(b => b.CategoryId)
+                .OnDelete(DeleteBehavior.Cascade);
             // Thiết lập mối quan hệ 1-n giữa Book và BookCategory
             modelBuilder.Entity<Book>()
                 .HasOne(b => b.Category)

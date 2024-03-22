@@ -13,8 +13,32 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\nguye\\source\\repos\\BookStore_Mock_Project\\BookStore_Mock_Project\\wwwroot\\img\\Ebook-Dac-nhan-tam.jpg",
+      "PackagePath": "staticwebassets\\img\\Ebook-Dac-nhan-tam.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\source\\repos\\BookStore_Mock_Project\\BookStore_Mock_Project\\wwwroot\\img\\artworks-D2SVGyzXC1ySJtz6-Rbs0pg-t500x500.jpg",
+      "PackagePath": "staticwebassets\\img\\artworks-D2SVGyzXC1ySJtz6-Rbs0pg-t500x500.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\source\\repos\\BookStore_Mock_Project\\BookStore_Mock_Project\\wwwroot\\img\\doigandungudai.jpg",
+      "PackagePath": "staticwebassets\\img\\doigandungudai.jpg"
+    },
+    {
       "Id": "C:\\Users\\nguye\\source\\repos\\BookStore_Mock_Project\\BookStore_Mock_Project\\wwwroot\\img\\open-book.png",
       "PackagePath": "staticwebassets\\img\\open-book.png"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\source\\repos\\BookStore_Mock_Project\\BookStore_Mock_Project\\wwwroot\\img\\sach-hay-khien-tuong-lai-biet-on-vi-hien-tai-ban-da-co-gang-het-minh.jpg",
+      "PackagePath": "staticwebassets\\img\\sach-hay-khien-tuong-lai-biet-on-vi-hien-tai-ban-da-co-gang-het-minh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\source\\repos\\BookStore_Mock_Project\\BookStore_Mock_Project\\wwwroot\\img\\sach-sap-ra-mat-lam-viec-thong-minh.jpg",
+      "PackagePath": "staticwebassets\\img\\sach-sap-ra-mat-lam-viec-thong-minh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nguye\\source\\repos\\BookStore_Mock_Project\\BookStore_Mock_Project\\wwwroot\\img\\that-tich-khong-mua-e1598369525154.jpg",
+      "PackagePath": "staticwebassets\\img\\that-tich-khong-mua-e1598369525154.jpg"
     },
     {
       "Id": "C:\\Users\\nguye\\source\\repos\\BookStore_Mock_Project\\BookStore_Mock_Project\\wwwroot\\js\\site.js",
