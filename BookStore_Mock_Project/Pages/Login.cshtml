@@ -3,65 +3,75 @@
 
 @{
     ViewData["Title"] = "Login";
-    Layout = "BoostrapLayout";
-    
+    Layout = null;
 }
-<div class="d-flex justify-content-center align-items-center mt-5">
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Modern Login Page | AsmrProg</title>
+</head>
 
-    <div class="card">
-
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item text-center">
-                <a class="nav-link active btl" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Login</a>
-            </li>
-            <li class="nav-item text-center">
-                <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">All</a>
-            </li>
-        </ul>
-        <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
-                <div class="form px-4 pt-5">
-
-                    <input type="text" name="" class="form-control" placeholder="Email or Phone">
-
-                    <input type="text" name="" class="form-control" placeholder="Password">
-                    <button class="btn btn-dark btn-block">Login</button>
-
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form method="post">
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-
-
-
-            </div>
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-
-
-                <div class="form px-4">
-
-                    <input type="text" name="" class="form-control" placeholder="Name">
-
-                    <input type="text" name="" class="form-control" placeholder="Email">
-
-                    <input type="text" name="" class="form-control" placeholder="Phone">
-
-                    <input type="text" name="" class="form-control" placeholder="Password">
-
-                    <button class="btn btn-dark btn-block">Signup</button>
-
-
-                </div>
-
-
-
-            </div>
-
+                <span>or use your email for registeration</span>
+                <input asp-for="username" type="text" placeholder="Name">
+                <input asp-for="email" type="email" placeholder="Email">
+                <input asp-for="password" type="password" placeholder="Password">
+                @if (TempData["ExistUser"] != null)
+                {
+                    <label class="text-danger">@TempData["ExistUser"]</label>
+                }
+                <button asp-page-handler="SignUp">Sign Up</button>
+            </form>
         </div>
-
-
-
-
+        <div class="form-container sign-in">
+            <form method="post">
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your username password</span>
+                <input asp-for="username" placeholder="Username">
+                <input asp-for="password" type="password" placeholder="Password">
+                <button asp-page-handler="Forget" style="background: white; color: black">Forget Your Password?</button>
+                <button asp-page-handler="SignIn">Sign In</button>
+            </form>
+            
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script src="~/js/script.js"></script>
+</body>
 
-</div>
+</html>

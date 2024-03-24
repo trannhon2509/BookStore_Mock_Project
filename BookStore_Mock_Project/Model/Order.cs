@@ -10,8 +10,8 @@ namespace BookStore_Mock_Project.Model
         public bool Status { get; set; } = true;
 
         public Guid UserId { get; set; }
-        public User User { get; set; }
+        public required User User { get; set; }
 
-        public List<OrderDetail> OrderDetails { get; set; }
+        public List<OrderDetail>? OrderDetails { get; set; }
     }
 }

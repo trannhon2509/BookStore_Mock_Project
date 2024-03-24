@@ -1,4 +1,5 @@
 ﻿using BookStore_Mock_Project.Data;
+using BookStore_Mock_Project.Service;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookStore_Mock_Project
@@ -9,16 +10,17 @@ namespace BookStore_Mock_Project
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Thêm dịch vụ session vào ứng dụng
+            // Thêm HttpContextAccessor
+            builder.Services.AddHttpContextAccessor();
+            // Đăng ký SessionService
+            builder.Services.AddScoped<SessionService>();
+
             builder.Services.AddSession(options =>
             {
-                // Thiết lập thời gian sống mặc định cho session (ở đây là 20 phút)
                 options.IdleTimeout = TimeSpan.FromMinutes(20);
             });
 
-            // Add services to the container.
             builder.Services.AddRazorPages();
-            // Add services to the container.
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -29,17 +31,16 @@ namespace BookStore_Mock_Project
 
 
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
+            // Sử dụng Session Middleware
             app.UseRouting();
 
             app.UseAuthorization();

@@ -1,0 +1,139 @@
+﻿@page
+@using BookStore_Mock_Project.Service
+@using BookStore_Mock_Project.Model
+@model BookStore_Mock_Project.Pages.ProfileModel
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Profile";
+    HttpContextAccessor accessor = new HttpContextAccessor();
+    SessionService session = new SessionService(accessor);
+    var info = session.Get<User>("Info");
+}
+
+<style>
+    .nav-link {
+        text-align: left;
+    }
+</style>
+<h1>Manage your account</h1>
+<div>
+    <h2>Change your account settings</h2>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="nav flex-column nav-pills me-3 col-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Profile</button>
+                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Change</button>
+                <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Two-factor authentication</button>
+                <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Personal data</button>
+            </div>
+            <div class="tab-content col-8" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    @{
+                        if (info != null)
+                        {
+                            <div class="row d-flex justify-content-center align-items-center h-100">
+                                <div class="card mb-3" style="border-radius: .5rem;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4 gradient-custom text-center text-black"
+                                             style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                                                 alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                                            <h5>@info.Username</h5>
+
+                                            <i class="far fa-edit mb-5"></i>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body p-4">
+                                                <h6>Information</h6>
+                                                <hr class="mt-0 mb-4">
+                                                <div class="row pt-1">
+                                                    <div class="col-6 mb-3">
+                                                        <h6>Email</h6>
+                                                        <p class="text-muted">@info.Email</p>
+                                                    </div>
+                                                    <div class="col-6 mb-3">
+                                                        <h6>Phone</h6>
+                                                        <p class="text-muted">123 456 789</p>
+                                                    </div>
+                                                </div>
+                                                <h6>Projects</h6>
+                                                <hr class="mt-0 mb-4">
+                                                <div class="row pt-1">
+                                                    <div class="col-6 mb-3">
+                                                        <h6>Recent</h6>
+                                                        <p class="text-muted">Lorem ipsum</p>
+                                                    </div>
+                                                    <div class="col-6 mb-3">
+                                                        <h6>Most Viewed</h6>
+                                                        <p class="text-muted">Dolor sit amet</p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-start">
+                                                    <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                                                    <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                                                    <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <p>Guest</p>
+                        }
+                    }
+                </div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <form method="post">
+                                    <div class="card-body p-4">
+                                        <h6>Information</h6>
+                                        <hr class="mt-0 mb-4">
+                                        <div class="row pt-1">
+                                            <div class="col-6 mb-3">
+                                                <h6>Email</h6>
+                                                <input asp-for="email" class="input-group" type="type" value="@info.Email" />
+                                            </div>
+                                            <div class="col-6 mb-3">
+                                                <h6>Password</h6>
+                                                <input class="input-group" type="type" asp-for="password" value="@info.Password" />
+                                            </div>
+                                        </div>
+                                        <h6>Projects</h6>
+                                        <hr class="mt-0 mb-4">
+                                        <div class="row pt-1">
+                                            <div class="col-6 mb-3">
+                                                <h6>Recent</h6>
+                                                <p class="text-muted">Lorem ipsum</p>
+                                            </div>
+                                            <div class="col-6 mb-3">
+                                                <h6>Most Viewed</h6>
+                                                <p class="text-muted">Dolor sit amet</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-start">
+                                            <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                                            <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                                            <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                                        </div>
+                                        <button type="submit" asp-page-handler="ChangeInfo" class="btn btn-primary">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    <h1>Two-factor authentication</h1>
+                </div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    <h1>Personal data</h1>
+                </div>
+            </div>
+        </div>
+    </div>

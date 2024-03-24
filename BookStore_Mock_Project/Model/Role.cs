@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookStore_Mock_Project.Model
 {
@@ -6,9 +7,10 @@ namespace BookStore_Mock_Project.Model
     {
         [Key]
         public Guid RoleId { get; set; }
+        [Required]
         public string Name { get; set; }
         public bool Status { get; set; } = true;
-
-        public List<User> Users { get; set; }
+        [JsonIgnore]
+        public List<User>? Users { get; set; }
     }
 }
