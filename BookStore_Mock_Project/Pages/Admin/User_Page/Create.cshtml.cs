@@ -35,7 +35,7 @@ namespace BookStore_Mock_Project.Pages.Admin.User_Page
 
             _context.Users.Add(User);
             await _context.SaveChangesAsync();
-
+            TempData["Notify"] = "Create " + User.Username + " successfully!";
             return RedirectToPage("./Index");
         }
     }

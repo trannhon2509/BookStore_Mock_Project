@@ -7,127 +7,142 @@
 
 <h1>Index</h1>
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
 </p>
+
+
+@{
+    if(TempData["Notify"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>@TempData["Notify"]!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+}
+
 
 <div class="container mt-5">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">All</a>
+            <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">List user</a>
         </li>
-            <li class="nav-item">
-                <a class="nav-link" id="@categories.Name-tab" data-toggle="tab" href="#@categories.Name" role="tab" aria-controls="@categories.Name" aria-selected="false">@categories.Name</a>
-            </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2.Name" aria-selected="false">Deleted</a>
+        </li>
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-            <div class="row row-cols-1 row-cols-md-4 g-4">
-                    <div class="col-4">
-                        <div class="card h-100">
-                            <div class="card-header h-50">
-                                <img src="./img/sach-hay-khien-tuong-lai-biet-on-vi-hien-tai-ban-da-co-gang-het-minh.jpg" class="card-img-top" height="100%" alt="...">
-                            </div>
-                            <div class="card-body d-flex flex-column justify-content-between" style="padding: 0, 2px, 0, 2px;">
-                                <div class="card-text">
-                                    <h5 class="card-title text-truncate " data-bs-toggle="tooltip" data-bs-placement="right" title="@item.Title - @item.Author">@item.Title - @item.Author</h5>
-                                    <p class="card-text text-truncate-3">@item.Description</p>
-                                </div>
-                                <div class="card-text d-flex justify-content-between align-items-center">
-                                    <small class="card-text">@item.Category.Name</small>
-                                    <small class="card-subtitle">Remain: @item.Quantity</small>
-                                </div>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <h5 class="">@item.Price$</h5>
-                                <button asp-page-handler="AddToCard" class="btn btn-danger">Add to cart</button>
-                            </div>
-                        </div>
-                    </div>
-            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User[0].Username)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User[0].Password)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User[0].Status)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User[0].Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User[0].Role)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.User)
+                    {
+                        if (item.Status == true)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Username)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Password)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Status)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Role.Name)
+                                </td>
+                                <td>
+                                    <a asp-page="./Edit" asp-route-id="@item.UserId" class="btn btn-secondary">Edit</a> 
+                                    <a asp-page="./Details" asp-route-id="@item.UserId" class="btn btn-info">Details</a> 
+                                    <a asp-page="./Delete" asp-route-id="@item.UserId" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+
         </div>
-        @foreach (var item in Model.User)
-        {
-            if (item.Status == true)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Username)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Password)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Role.Name)
-                    </td>
-                    <td>
-                        <a asp-page="./Edit" asp-route-id="@item.UserId">Edit</a> |
-                        <a asp-page="./Details" asp-route-id="@item.UserId">Details</a> |
-                        <a asp-page="./Delete" asp-route-id="@item.UserId">Delete</a>
-                    </td>
-                </tr>
-            }
-        }
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User[0].Username)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User[0].Password)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User[0].Status)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User[0].Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User[0].Role)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.User)
+                    {
+                        if (item.Status == false)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Username)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Password)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Status)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Role.Name)
+                                </td>
+                                <td>
+                                    <a asp-page="./Edit" asp-route-id="@item.UserId" class="btn btn-secondary">Edit</a> 
+                                    <a asp-page="./Details" asp-route-id="@item.UserId" class="btn btn-info">Details</a> 
+                                    <a asp-page="./Delete" asp-route-id="@item.UserId" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
 
-
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].Username)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].Password)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].Role)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.User) {
-            if (item.Status == true)
-            {
-                <tr>
-                    <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Role.Name)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.UserId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.UserId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.UserId">Delete</a>
-            </td>
-        </tr>
-        }
-}
-    </tbody>
-</table>

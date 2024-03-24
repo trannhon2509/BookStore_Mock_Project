@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BookStore_Mock_Project.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using BookStore_Mock_Project.Data;
-using BookStore_Mock_Project.Model;
 
 namespace BookStore_Mock_Project.Pages.Admin.User_Page
 {
@@ -20,7 +15,7 @@ namespace BookStore_Mock_Project.Pages.Admin.User_Page
         }
 
         [BindProperty]
-      public User User { get; set; } = default!;
+        public User User { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {
@@ -35,7 +30,7 @@ namespace BookStore_Mock_Project.Pages.Admin.User_Page
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 User = user;
             }
@@ -59,6 +54,7 @@ namespace BookStore_Mock_Project.Pages.Admin.User_Page
                 try
                 {
                     await _context.SaveChangesAsync();
+                    TempData["Notify"] = "Delete " + User.Username + " successfully!";
                 }
                 catch (DbUpdateConcurrencyException)
                 {

@@ -44,6 +44,7 @@ namespace BookStore_Mock_Project.Pages.Admin.User_Page
             try
             {
                 await _context.SaveChangesAsync();
+                TempData["Notify"] = "Edit " + User.Username + " successfully!";
             }
             catch (DbUpdateConcurrencyException)
             {
