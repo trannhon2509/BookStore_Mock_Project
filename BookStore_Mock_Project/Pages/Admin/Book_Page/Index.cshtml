@@ -1,0 +1,184 @@
+﻿@page
+@model BookStore_Mock_Project.Pages.Admin.Book_Page.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+@{
+    if (TempData["Notify"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>@TempData["Notify"]!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+}
+
+
+<div class="container mt-5">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Available Books</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2.Name" aria-selected="false">Temporarily Deleted</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].Author)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].Price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].image)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].Quantity)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].Category)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Book)
+                    {
+                        if(item.Status == true){
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Author)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                                @if (item.image == null || item.image.Length == 0)
+                                {
+                                    <td>
+                                        <image src="/image/No_Image_Available.jpg" />
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        <image src="/image/@item.image" />
+                                    </td>
+                                }
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category.Name)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.BookId">Edit</a> |
+                                <a asp-page="./Details" asp-route-id="@item.BookId">Details</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.BookId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                    }
+                </tbody>
+            </table>
+
+        </div>
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].Author)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].Price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].image)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].Quantity)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Book[0].Category)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Book)
+                    {
+                        if (item.Status == false)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Author)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+                                @if (item.image == null)
+                                {
+                                    <td>
+                                        <image src="/image/No_Image_Available.jpg" />
+                                    </td>
+                                }else{
+                                    <td>
+                                        <image src="/image/@item.image" />
+                                    </td>
+                                }
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Category.Name)
+                                </td>
+                                <td>
+                                    <a asp-page="./Restore" asp-route-id="@item.BookId" class="btn btn-secondary">Restore</a>
+                                    <a asp-page="./PermDelete" asp-route-id="@item.BookId" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -36,7 +36,7 @@ namespace BookStore_Mock_Project
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
-
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSession();
