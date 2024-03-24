@@ -31,6 +31,7 @@ namespace BookStore_Mock_Project.Pages.Admin.Category_Page
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
+            BookCategory.Status = true;
           if (!ModelState.IsValid || _context.BookCategories == null || BookCategory == null)
             {
                 return Page();
@@ -38,7 +39,7 @@ namespace BookStore_Mock_Project.Pages.Admin.Category_Page
 
             _context.BookCategories.Add(BookCategory);
             await _context.SaveChangesAsync();
-
+            TempData["Notify"] = BookCategory.Name + " is successfully added!";
             return RedirectToPage("./Index");
         }
     }

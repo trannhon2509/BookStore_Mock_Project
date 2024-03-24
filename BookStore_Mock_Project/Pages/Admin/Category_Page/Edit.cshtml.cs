@@ -65,7 +65,7 @@ namespace BookStore_Mock_Project.Pages.Admin.Category_Page
                     throw;
                 }
             }
-
+            TempData["Notify"] = BookCategory.Name + " is successfully updated!";
             return RedirectToPage("./Index");
         }
 

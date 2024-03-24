@@ -10,11 +10,11 @@ using BookStore_Mock_Project.Model;
 
 namespace BookStore_Mock_Project.Pages.Admin.Category_Page
 {
-    public class DeleteModel : PageModel
+    public class PermDeleteModel : PageModel
     {
         private readonly BookStore_Mock_Project.Data.ApplicationDbContext _context;
 
-        public DeleteModel(BookStore_Mock_Project.Data.ApplicationDbContext context)
+        public PermDeleteModel(BookStore_Mock_Project.Data.ApplicationDbContext context)
         {
             _context = context;
         }
@@ -53,35 +53,11 @@ namespace BookStore_Mock_Project.Pages.Admin.Category_Page
             if (bookcategory != null)
             {
                 BookCategory = bookcategory;
-                BookCategory.Status = false;
-                _context.Attach(BookCategory).State = EntityState.Modified;
-
-                try
-                {
-                    await _context.SaveChangesAsync();
-                    TempData["Notify"] = "Delete " + BookCategory.Name + " successfully!";
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BookCategoryExists(BookCategory.CategoryId))
-                    {
-                        TempData["Notify"] = BookCategory.Name + " is deleted fail.";
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                TempData["Notify"] = BookCategory.Name + " is successfully deleted!";
-                return RedirectToPage("./Index");
+                _context.BookCategories.Remove(BookCategory);
+                await _context.SaveChangesAsync();
             }
-
+            TempData["Notify"] = BookCategory.Name + " is permanently removed!";
             return RedirectToPage("./Index");
-        }
-        private bool BookCategoryExists(Guid id)
-        {
-            return (_context.BookCategories?.Any(e => e.CategoryId == id)).GetValueOrDefault();
         }
     }
 }

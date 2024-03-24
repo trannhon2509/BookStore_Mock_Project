@@ -10,11 +10,11 @@ using BookStore_Mock_Project.Model;
 
 namespace BookStore_Mock_Project.Pages.Admin.Category_Page
 {
-    public class DeleteModel : PageModel
+    public class RestoreModel : PageModel
     {
         private readonly BookStore_Mock_Project.Data.ApplicationDbContext _context;
 
-        public DeleteModel(BookStore_Mock_Project.Data.ApplicationDbContext context)
+        public RestoreModel(BookStore_Mock_Project.Data.ApplicationDbContext context)
         {
             _context = context;
         }
@@ -53,13 +53,13 @@ namespace BookStore_Mock_Project.Pages.Admin.Category_Page
             if (bookcategory != null)
             {
                 BookCategory = bookcategory;
-                BookCategory.Status = false;
+                BookCategory.Status = true;
                 _context.Attach(BookCategory).State = EntityState.Modified;
 
                 try
                 {
                     await _context.SaveChangesAsync();
-                    TempData["Notify"] = "Delete " + BookCategory.Name + " successfully!";
+                    TempData["Notify"] = BookCategory.Name + " is successfully restored! Please check in the available list";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -73,7 +73,6 @@ namespace BookStore_Mock_Project.Pages.Admin.Category_Page
                         throw;
                     }
                 }
-                TempData["Notify"] = BookCategory.Name + " is successfully deleted!";
                 return RedirectToPage("./Index");
             }
 
