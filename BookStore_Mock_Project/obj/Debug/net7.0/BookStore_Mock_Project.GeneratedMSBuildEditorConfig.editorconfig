@@ -9,99 +9,107 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BookStore_Mock_Project
 build_property.RootNamespace = BookStore_Mock_Project
-build_property.ProjectDir = C:\Users\nguye\source\repos\BookStore_Mock_Project\BookStore_Mock_Project\
+build_property.ProjectDir = C:\Users\BOSS\source\repos\BookStore_Mock_Project\BookStore_Mock_Project\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\nguye\source\repos\BookStore_Mock_Project\BookStore_Mock_Project
+build_property.MSBuildProjectDirectory = C:\Users\BOSS\source\repos\BookStore_Mock_Project\BookStore_Mock_Project
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/Role_Page/Create.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/Role_Page/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUm9sZV9QYWdlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/Role_Page/Delete.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/Role_Page/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUm9sZV9QYWdlXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/Role_Page/Details.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/Role_Page/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUm9sZV9QYWdlXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/Role_Page/Edit.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/Role_Page/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUm9sZV9QYWdlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/Role_Page/Index.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/Role_Page/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUm9sZV9QYWdlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/User_Page/Create.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/User_Page/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcl9QYWdlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/User_Page/Delete.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/User_Page/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcl9QYWdlXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/User_Page/Details.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/User_Page/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcl9QYWdlXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/User_Page/Edit.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/User_Page/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcl9QYWdlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/User_Page/Index.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/User_Page/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcl9QYWdlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Card.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/User_Page/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcl9QYWdlXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Admin/User_Page/TemporarilyDeleted.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcl9QYWdlXFRlbXBvcmFyaWx5RGVsZXRlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Card.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Error.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Index.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Login.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Privacy.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Profile.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Purchase.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Purchase.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHVyY2hhc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Shared/BoostrapLayout.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Shared/BoostrapLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXEJvb3N0cmFwTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/_ViewImports.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/_ViewStart.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguye/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Shared/_Layout.cshtml]
+[C:/Users/BOSS/source/repos/BookStore_Mock_Project/BookStore_Mock_Project/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-50yf8dhch2

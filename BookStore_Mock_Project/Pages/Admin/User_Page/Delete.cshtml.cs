@@ -53,11 +53,33 @@ namespace BookStore_Mock_Project.Pages.Admin.User_Page
             if (user != null)
             {
                 User = user;
-                _context.Users.Remove(User);
-                await _context.SaveChangesAsync();
+                User.Status = false;
+                _context.Attach(User).State = EntityState.Modified;
+
+                try
+                {
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!UserExists(User.UserId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+
+                return RedirectToPage("./Index");
             }
 
             return RedirectToPage("./Index");
+        }
+        private bool UserExists(Guid id)
+        {
+            return (_context.Users?.Any(e => e.UserId == id)).GetValueOrDefault();
         }
     }
 }
