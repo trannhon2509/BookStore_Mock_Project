@@ -20,7 +20,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center justify-content-center" asp-page="/Index">
+                <a class="navbar-brand d-flex align-items-center justify-content-center" asp-page="/Admin/Book_Page/Index">
                     <img src="~/img/open-book.png" alt="Logo" width="60px" />
                     <h2>Bookstore</h2>
                 </a>
@@ -48,16 +48,14 @@
                                     <li><a class="dropdown-item" asp-page="/Admin/Book_Page/Index">Book</a></li>
                                     <li><a class="dropdown-item" asp-page="/Admin/Role_Page/Index">Role</a></li>
                                     <li><a class="dropdown-item" asp-page="/Admin/Category_Page/Index">Category</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Admin/Order_Page/Index">Order</a></li>
+                                   
                                 }
                                 else
                                 {
                                     <li><a class="dropdown-item disabled" asp-page="/Profile">Profile</a></li>
                                 }
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                               
                             </ul>
                         </li>
                         <li class="nav-item">

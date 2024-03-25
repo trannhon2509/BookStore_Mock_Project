@@ -15,5 +15,5 @@ $(document).ready(function () {
 var connection = new signalR.HubConnectionBuilder().withUrl("/signalRServer").build();
 
 connection.on("LoadBooks", function () {
-    location.href = '/Admin/Book_Page/Index';
+    location.href = '/Admin/Book_Page/Create';
 });
