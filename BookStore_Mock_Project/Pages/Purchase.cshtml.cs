@@ -1,4 +1,4 @@
-using BookStore_Mock_Project.Data;
+﻿using BookStore_Mock_Project.Data;
 using BookStore_Mock_Project.Model;
 using BookStore_Mock_Project.Service;
 using Microsoft.AspNetCore.Mvc;
@@ -92,5 +92,48 @@ namespace BookStore_Mock_Project.Pages
             _session.Set<List<CartItem>>("cart", Cart);
             return RedirectToPage("/Purchase");
         }
+
+        public async Task<IActionResult> OnPostCheckoutAsync()
+        {
+            User user = _session.Get<User>("Info");
+            if (user != null && user.UserId != Guid.Empty) // Ensure user object and UserId are valid
+            {
+                Order newOrder = new Order
+                {
+                    OrderId = Guid.NewGuid(),
+                    OrderDate = DateTime.Now,
+                    Status = true,
+                    UserId = user.UserId // Set UserId directly
+                };
+                _context.Orders.Add(newOrder);
+                _context.SaveChanges();
+
+                foreach (var cartItem in _session.Get<List<CartItem>>("cart"))
+                {
+                    OrderDetail newOrderDetail = new OrderDetail
+                    {
+                        OrderDetailId = Guid.NewGuid(),
+                        Quantity = cartItem.Quantity,
+                        Price = cartItem.Book.Price,
+                        OrderId = newOrder.OrderId, // Link to newly created order
+                        BookId = cartItem.Book.BookId
+                    };
+
+                    _context.OrderDetails.Add(newOrderDetail);
+                }
+
+                _context.SaveChanges(); // Save changes after adding all order details
+
+                Console.WriteLine("Thanh toán thành công");
+            }
+            else
+            {
+                Console.WriteLine("Người dùng phải đăng nhập");
+                return Redirect("/Login");
+            }
+
+            return RedirectToAction("CheckoutSuccess"); // Redirect to a checkout success page
+        }
+
     }
 }

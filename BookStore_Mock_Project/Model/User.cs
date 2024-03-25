@@ -6,7 +6,7 @@ namespace BookStore_Mock_Project.Model
     public class User
     {
         [Key]
-        public Guid UserId { get; set; } = Guid.NewGuid();
+        public Guid UserId { get; set; }
         [Required]
         public string Username { get; set; }
         [Required]

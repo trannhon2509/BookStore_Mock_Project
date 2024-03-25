@@ -329,7 +329,7 @@ namespace BookStore_Mock_Project.Data
             };
             context.Users.AddRange(users);
             context.SaveChanges();
-
+            /*
             // Sample data for Orders
             var orders = new List<Order>
 {
@@ -359,6 +359,7 @@ namespace BookStore_Mock_Project.Data
             };
             context.OrderDetails.AddRange(orderDetails);
             context.SaveChanges();
+            */
         }
     }
 }

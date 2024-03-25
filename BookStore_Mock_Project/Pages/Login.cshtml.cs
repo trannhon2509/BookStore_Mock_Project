@@ -35,13 +35,23 @@ namespace BookStore_Mock_Project.Pages
                 if (_session != null)
                 {
                     _session.Set<User>("Info", account);
-                    return Redirect("/Index");
+                    if (account.RoleId == _context.Roles.FirstOrDefault(r => r.Name == "Admin")?.RoleId)
+                    {
+                        // Redirect to admin page
+                        return Redirect("/Admin/Book_Page/Index");
+                    }
+                    else
+                    {
+                        // Redirect to user page
+                        return Redirect("/Index");
+                    }
                 }
                 return Page();
             }
             Console.WriteLine("Wrong username and password.");
             return Page();
         }
+
         public IActionResult OnPostSignUp()
         {
             var account = _context.Users.Where(u => u.Username == username.Trim() || u.Email == email.Trim());

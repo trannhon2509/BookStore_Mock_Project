@@ -26,7 +26,7 @@
                     {
                         <div class="row align-items-center">
                             <div class="col-md-2">
-                                <img class="img-responsive" src="~/img/book_img.jpg" width="70">
+                                <img class="img-responsive" src="~/img/sach-hay-khien-tuong-lai-biet-on-vi-hien-tai-ban-da-co-gang-het-minh.jpg" width="70">
                             </div>
                             <div class="col-md-4">
                                 <h5 class="product-name"><strong>@item.Book.Title</strong></h5>
@@ -65,9 +65,11 @@
                             <h4 class="text-end">Total <strong>$@ViewData["total"]</strong></h4>
                         </div>
                         <div class="col-3">
-                            <button type="button" class="btn btn-success">
-                                Checkout
-                            </button>
+                            <form method="post" asp-page-handler="Checkout">
+                                <button type="submit" class="btn btn-success">
+                                    Checkout
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

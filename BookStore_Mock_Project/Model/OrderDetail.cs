@@ -5,7 +5,7 @@ namespace BookStore_Mock_Project.Model
     public class OrderDetail
     {
         [Key]
-        public Guid OrderDetailId { get; set; } = Guid.NewGuid();
+        public Guid OrderDetailId { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
 

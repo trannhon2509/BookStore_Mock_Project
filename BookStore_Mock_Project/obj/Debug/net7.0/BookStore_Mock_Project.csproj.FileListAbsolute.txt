@@ -506,3 +506,4 @@ C:\Users\BOSS\Source\Repos\BookStore_Mock_Project\BookStore_Mock_Project\obj\Deb
 C:\Users\BOSS\Source\Repos\BookStore_Mock_Project\BookStore_Mock_Project\obj\Debug\net7.0\BookStore_Mock_Project.csproj.CopyComplete
 C:\Users\BOSS\Source\Repos\BookStore_Mock_Project\BookStore_Mock_Project\obj\Debug\net7.0\BookStore_Mock_Project.genruntimeconfig.cache
 C:\Users\BOSS\Source\Repos\BookStore_Mock_Project\BookStore_Mock_Project\obj\Debug\net7.0\ref\BookStore_Mock_Project.dll
+C:\Users\nguye\source\repos\BookStore_Mock_Project\BookStore_Mock_Project\bin\Debug\net7.0\libman.json

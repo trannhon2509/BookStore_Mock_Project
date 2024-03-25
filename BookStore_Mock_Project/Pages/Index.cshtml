@@ -42,7 +42,16 @@
                             </div>
                             <div class="card-footer d-flex justify-content-between">
                                 <h5 class="">@item.Price$</h5>
-                                <button asp-page-handler="AddToCard" class="btn btn-danger">Add to cart</button>
+                                
+                                <form class="d-flex" method="post" asp-page="Purchase" asp-page-handler="AddToCart">
+                    <input class="form-control text-center me-3" name="quantity" type="number" value="1" style="max-width: 3.5rem" />
+                    <button class="btn btn-outline-danger flex-shrink-0" type="submit" name="id" value="@item.BookId">
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                    </button>
+                </form>
+
+
                             </div>
                         </div>
                     </div>

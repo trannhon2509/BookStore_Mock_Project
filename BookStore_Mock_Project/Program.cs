@@ -10,6 +10,8 @@ namespace BookStore_Mock_Project
         {
             var builder = WebApplication.CreateBuilder(args);
 
+
+            builder.Services.AddSignalR();
             // Thêm HttpContextAccessor
             builder.Services.AddHttpContextAccessor();
             // Đăng ký SessionService
@@ -36,7 +38,7 @@ namespace BookStore_Mock_Project
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
-
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSession();
@@ -44,7 +46,11 @@ namespace BookStore_Mock_Project
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id}");
+                endpoints.MapHub<SignalServer>("/signalrServer");
+            });
             app.MapRazorPages();
 
 
